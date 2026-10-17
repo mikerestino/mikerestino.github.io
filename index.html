@@ -13,7 +13,7 @@
 </head>
 <body>
 <title>Mike_Restino_AI_Portfolio_EN</title>
-<script>try{var _t=localStorage.getItem('mr-theme');if(_t==='light'||_t==='dark')document.documentElement.setAttribute('data-theme',_t)}catch(e){}</script>
+<script>document.documentElement.setAttribute('data-theme','dark')</script>
 <style>@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/2ee17598a9.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/2ee17598a9.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/2ee17598a9.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
@@ -453,10 +453,10 @@ function applyTheme(t){var r=document.documentElement,L=t==='light';r.setAttribu
   FXC1=L?'150,108,58':'200,162,113';FXC2=L?'8,145,178':'0,255,255';
   var b=document.querySelector('.themebtn');if(b){var s=b.querySelector('.tl');if(s)s.textContent=L?'Dark':'Light';b.setAttribute('aria-pressed',L?'true':'false')}
   var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',L?'#F4F6F9':'#07090F')}
-(function(){var t='dark';try{var v=localStorage.getItem('mr-theme');if(v==='light'||v==='dark')t=v}catch(e){}applyTheme(t);
+(function(){/* 17/10/2026, pedido do Mike: sempre abre em dark; a troca vale so durante a visita */try{localStorage.removeItem('mr-theme')}catch(e){}applyTheme('dark');
   var b=document.querySelector('.themebtn');if(b)b.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();
     var n=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';applyTheme(n);
-    try{localStorage.setItem('mr-theme',n)}catch(err){}b.blur()})})();
+    b.blur()})})();
 var count=document.querySelector('.count');
 
 var fsOn=false,canFS=!!((document.fullscreenEnabled||document.webkitFullscreenEnabled)&&(root.requestFullscreen||root.webkitRequestFullscreen));
